@@ -27,3 +27,25 @@ mongoose.connect(MONGODB_URI, {useNewUrlParser:true, useUnifiedTopology:true})
     console.error('MongoDB connection error:', err);
     app.listen(PORT, ()=> console.log('Server running (no DB) on port', PORT));
   });
+
+import express from "express";
+import cors from "cors";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+dotenv.config();
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.send("🚀 FaceShift API online e rodando!");
+});
+
+// exemplo: rota de status
+app.get("/status", (req, res) => {
+  res.json({ status: "ok", message: "Servidor e banco online" });
+});
+
+const PORT = process.env.PORT || 10000;
+app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
