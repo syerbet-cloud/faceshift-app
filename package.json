@@ -21,10 +21,3 @@
     "nodemon": "^2.0.22"
   }
 }
-
-git init                 # inicializa o repo local
-git add .                # adiciona todos os arquivos
-git commit -m "Primeiro commit"  # faz o commit
-git branch -M main       # garante que a branch principal é main
-git remote add origin https://github.com/syerbet-cloud/faceshift-app.git  # linka com o GitHub
-git push -u origin main  # envia para o GitHub
